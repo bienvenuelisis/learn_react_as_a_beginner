@@ -1,0 +1,80 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+:root {
+  /* --primary: #ddd0c8;
+  --secondary: #323232; */
+  /* --primary: #0c1a1a;
+  --secondary: #6acfc7; */
+  --primary: #1e212d;
+  --secondary: #eabf9f;
+  /* --tertiary: #f7f7f7; */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  color: var(--secondary);
+}
+
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(194, 194, 194);
+  border-radius: 0.313rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(85, 85, 85, 0.5);
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background-color: var(--primary);
+  padding: 1.5rem;
+}
+
+.navContainer {
+  display: flex;
+  column-gap: 2rem;
+  margin-bottom: 1rem;
+}
+
+.select {
+  background-color: transparent;
+  border: 1px solid var(--secondary);
+  padding: 0.75rem;
+  margin-left: 1rem;
+  outline: none;
+  text-transform: capitalize;
+  appearance: none;
+}
+
+.select * {
+  text-transform: capitalize;
+  background-color: var(--primary);
+  font-size: 1rem;
+  width: 20rem;
+}
+
+@media screen and (max-width: 430px) {
+  .select {
+    width: 20rem;
+  }
+
+  .navContainer {
+    flex-direction: column;
+    row-gap: 1rem;
+  }
+}
