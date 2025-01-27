@@ -1,0 +1,35 @@
+/* styles.css */
+.app {
+    font-family: Arial, sans-serif;
+    max-width: 600px;
+    margin: 50px auto;
+}
+
+.tabs {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.tab-list {
+    display: flex;
+    border-bottom: 1px solid #ccc;
+}
+
+.tab {
+    flex: 1;
+    padding: 10px;
+    cursor: pointer;
+    background: #f1f1f1;
+    border: none;
+    outline: none;
+}
+
+.tab.active {
+    background: #fff;
+    border-bottom: 2px solid #007bff;
+    font-weight: bold;
+}
+
+.tab-panel {
+    padding: 20px;
+}
