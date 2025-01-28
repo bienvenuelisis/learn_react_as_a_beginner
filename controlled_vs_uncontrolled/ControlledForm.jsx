@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 const ControlledForm = () => {
     const [name, setName] = useState('');
+    
     const [email, setEmail] = useState('');
 
     const handleSubmit = (e) => {
