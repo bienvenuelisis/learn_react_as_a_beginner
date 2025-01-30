@@ -1,0 +1,32 @@
+.task-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #050000;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  .task-card.completed {
+    text-decoration: line-through;
+    background-color: #d4edda;
+  }
+  
+  .actions {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 10px;
+  }
+  
+  .actions button {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+  }
+  
+  .actions button svg {
+    margin-right: 5px;
+  }

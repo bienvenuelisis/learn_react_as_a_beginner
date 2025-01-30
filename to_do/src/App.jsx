@@ -1,29 +1,35 @@
-import { useState } from 'react';
-import './App.css';
+import Tasks from "./features/tasks";
+import "./App.css";
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
+
+import { useEffect } from "react";
+import useTasksStore from "./features/tasks/data/store/tasksStore";
 
 function App() {
-  let taskInput = "";
+  const { tasks, setTasks } = useTasksStore();
 
-  const [tasks, setTasks] = useState(["Task 1", "Task 2", "Task 3"]);
-  
-  return <div id="app">
-  <h1>To-Do List</h1>
-  <input onChange={(e) => {
-    taskInput = e.target.value;
-    console.log(taskInput);
-  }} type="text" id="new-task" placeholder="Add a new task"/>
-  <button onClick={()=> {
-    let tempTasks = tasks;
-    
-    tempTasks.push(taskInput);
+  useEffect(() => {
+    fetch("https://jsonplaceholder.typicode.com/todos")
+      .then((response) => response.json())
+      .then((data) => {
+        const tasks = data.map((task) => {
+          return {
+            title: task.title,
+            completed: task.completed,
+          };
+        });
 
-    setTasks([...tempTasks]);
-  }} id="add-task">Add</button>
-  <ul id="task-list">
-    {tasks.map(task => <li>{task}</li>)}
-  </ul>
-</div>
-  
+        console.log(tasks);
+
+        setTasks(tasks);
+      });
+  }, [setTasks]);
+
+  return tasks ? (
+    <Tasks defaultTasks={tasks} />
+  ) : (
+    <AiOutlineLoading3Quarters />
+  );
 }
 
-export default App
+export default App;
